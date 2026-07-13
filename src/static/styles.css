@@ -16,12 +16,54 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.user-menu {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.icon-button {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 20px;
+}
+
+.icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.user-menu-panel {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 220px;
+  background: #fff;
+  color: #222;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+.user-menu-panel button {
+  width: 100%;
 }
 
 header h1 {
@@ -186,6 +228,39 @@ button:hover {
   background-color: #d1ecf1;
   color: #0c5460;
   border: 1px solid #bee5eb;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 20;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.secondary-btn {
+  background-color: #616161;
+}
+
+.secondary-btn:hover {
+  background-color: #757575;
 }
 
 .hidden {

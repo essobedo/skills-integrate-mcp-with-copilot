@@ -5,7 +5,9 @@ A super simple FastAPI application that allows students to view and sign up for 
 ## Features
 
 - View all available extracurricular activities
-- Sign up for activities
+- Teacher login/logout
+- Teachers can sign up and unregister students for activities
+- Students can view activity rosters without authentication
 
 ## Getting Started
 
@@ -30,7 +32,15 @@ A super simple FastAPI application that allows students to view and sign up for 
 | Method | Endpoint                                                          | Description                                                         |
 | ------ | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
 | GET    | `/activities`                                                     | Get all activities with their details and current participant count |
-| POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Sign up for an activity                                             |
+| POST   | `/auth/login`                                                     | Teacher login with JSON body (`username`, `password`)              |
+| POST   | `/auth/logout`                                                    | Teacher logout using `X-Teacher-Token` header                      |
+| GET    | `/auth/session`                                                   | Validate current teacher session token                              |
+| POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Register a student (teacher token required)                         |
+| DELETE | `/activities/{activity_name}/unregister?email=student@...`        | Unregister a student (teacher token required)                       |
+
+## Teacher Credentials
+
+Teacher usernames and passwords are stored in `teachers.json` and validated by the backend.
 
 ## Data Model
 
